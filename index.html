@@ -149,7 +149,28 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Semantic Initial Header with H1 Tag in Page Source for SEO Crawlers & Initial Paint -->
+      <header class="app-initial-seo-header" style="max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; text-align: center; font-family: 'Outfit', sans-serif;">
+        <h1 style="font-size: 2.25rem; font-weight: 800; color: #ff2d75; line-height: 1.25; margin-bottom: 1rem; letter-spacing: -0.02em;">
+          PINKPDF — 100% Private, Client-Side In-Browser PDF Suite (33 Tools)
+        </h1>
+        <p style="color: #a0a0b0; font-size: 1.1rem; line-height: 1.6; max-width: 780px; margin: 0 auto 1.5rem;">
+          Organize, merge, split, compress, edit, convert, and sign PDF documents locally in your browser. 100% private, zero server uploads, unlimited file size, and blazing-fast WebAssembly speed.
+        </p>
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.25rem;">
+          <span style="display: inline-block; padding: 0.4rem 0.85rem; background: rgba(255,45,117,0.12); border: 1px solid rgba(255,45,117,0.3); border-radius: 9999px; color: #ff2d75; font-size: 0.85rem; font-weight: 600;">33 Free Tools</span>
+          <span style="display: inline-block; padding: 0.4rem 0.85rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 9999px; color: #e0e0f0; font-size: 0.85rem; font-weight: 600;">Zero Server Uploads</span>
+          <span style="display: inline-block; padding: 0.4rem 0.85rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 9999px; color: #e0e0f0; font-size: 0.85rem; font-weight: 600;">WebAssembly Speed</span>
+        </div>
+      </header>
+    </div>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; color: #fff; background: #09090d; font-family: sans-serif;">
+        <h2>JavaScript Required</h2>
+        <p>PINKPDF executes 100% client-side via WebAssembly. Please enable JavaScript to access all 33 PDF tools.</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
