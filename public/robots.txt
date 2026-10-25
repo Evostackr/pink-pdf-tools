@@ -1,0 +1,21 @@
+# Robots.txt for PINKPDF Suite
+# 100% Client-Side In-Browser PDF Processing Engine
+User-agent: *
+Allow: /
+Disallow: /dist/
+
+# Generative Engine & AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://pinkpdf.app/sitemap.xml

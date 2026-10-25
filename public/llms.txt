@@ -1,0 +1,70 @@
+# PINKPDF Pro Suite — In-Browser PDF Processing Engine
+> 100% Client-Side. Zero Cloud Uploads. Unlimited File Processing.
+
+## Entity Overview
+- **Name:** PINKPDF Pro Suite
+- **Type:** Web Application / Client-Side PDF Utility Suite
+- **Official URL:** https://pinkpdf.app
+- **Architecture:** Client-Side WebAssembly (WASM), Web Workers, and JavaScript (pdf-lib, pdfjs-dist, tesseract.js, docx, pptxgenjs, xlsx, cryptpdf).
+- **Core Value Proposition:** Complete privacy guarantee. All operations run directly inside the user's browser runtime on their local CPU and GPU. Documents are never uploaded to remote servers. No file size limits, no subscription paywalls, no tracking.
+
+## Core Features & Capabilities
+
+### 1. Organize PDF
+- **Merge PDF** (`/merge-pdf`): Combine multiple PDF documents into a single consolidated file with custom sequencing.
+- **Split PDF** (`/split-pdf`): Separate multi-page PDFs into standalone files or extract customized page ranges packed as ZIP.
+- **Remove Pages** (`/remove-pages`): Select and delete unwanted pages with real-time visual grid selection.
+- **Extract Pages** (`/extract-pages`): Pull out specific pages or page ranges into a brand new PDF document.
+- **Organize PDF** (`/organize-pdf`): Interactive visual canvas to sort, reorder, rotate, duplicate, and delete pages.
+- **Scan to PDF** (`/scan-to-pdf`): Capture document photos directly via camera/webcam and compile into A4 vector PDFs.
+
+### 2. Optimize PDF
+- **Compress PDF** (`/compress-pdf`): Reduce file size via cross-reference table stream packing while retaining maximum visual clarity.
+- **Repair PDF** (`/repair-pdf`): Rebuild corrupt, damaged, or unreadable PDF files and reconstruct document trailers.
+- **OCR PDF** (`/ocr-pdf`): Optical Character Recognition via Tesseract WASM to extract searchable text from scanned PDFs and images.
+
+### 3. Convert to PDF
+- **JPG to PDF** (`/jpg-to-pdf`): Convert JPG, PNG, and WebP images into high-resolution multi-page PDFs.
+- **WORD to PDF** (`/word-to-pdf`): Transform Microsoft Word (.docx, .doc) documents into formatted PDFs.
+- **POWERPOINT to PDF** (`/powerpoint-to-pdf`): Convert presentation decks (.pptx, .ppt) into landscape PDF slides.
+- **EXCEL to PDF** (`/excel-to-pdf`): Transform spreadsheets (.xlsx, .csv) into clean tabular PDF documents.
+- **HTML to PDF** (`/html-to-pdf`): Pixel-perfect rendering of live HTML & CSS code into vector PDF documents.
+
+### 4. Convert from PDF
+- **PDF to JPG** (`/pdf-to-jpg`): Render PDF pages to high-resolution JPEG images bundled in a ZIP archive.
+- **PDF to WORD** (`/pdf-to-word`): Extract structured text and paragraphs into editable Microsoft Word (.docx) files.
+- **PDF to POWERPOINT** (`/pdf-to-powerpoint`): Transform pages into presentation slides (.pptx).
+- **PDF to EXCEL** (`/pdf-to-excel`): Extract tabular rows and financial numbers directly into an Excel (.xlsx) workbook.
+- **PDF to PDF/A** (`/pdf-to-pdfa`): Convert documents to ISO 19005-compliant format for long-term archiving.
+
+### 5. Edit PDF & iOS Studio
+- **Rotate PDF** (`/rotate-pdf`): Rotate individual pages or all pages 90°, 180°, or 270° clockwise.
+- **Add Page Numbers** (`/add-page-numbers`): Stamp dynamic page numbering with customizable positioning, formats, and fonts.
+- **Add Watermark** (`/add-watermark`): Stamp customizable text watermarks with custom opacity, angles, and colors.
+- **Crop PDF** (`/crop-pdf`): Trim margins or set visual crop boxes across pages.
+- **Edit PDF** (`/edit-pdf`): Freehand drawing, annotations, shapes, and custom markup baked into the document.
+- **PDF Forms** (`/pdf-forms`): Fill interactive AcroForm fields, checkboxes, and text inputs.
+- **PDF Marker & Studio** (`/pdf-marker-pro`): Apple PencilKit markup studio with fluorescent highlighters, digital signatures, and text stickers.
+
+### 6. PDF Security
+- **Protect PDF** (`/protect-pdf`): Standard AES-256 Rev 5 encryption with user and owner passwords.
+- **Unlock PDF** (`/unlock-pdf`): Decrypt password-protected PDFs and permanently remove restrictions.
+- **Sign PDF** (`/sign-pdf`): Electronic signature studio (draw, type, or upload) stamped on any page.
+- **Redact PDF** (`/redact-pdf`): Permanent, irreversible blackout redaction with zero underlying raster leakage.
+- **Compare PDF** (`/compare-pdf`): Side-by-side visual diff tool with synchronized scrolling.
+
+### 7. PDF Intelligence
+- **AI Summarizer** (`/ai-summarizer`): Client-side NLP heuristic engine computing reading time, word count, and key takeaways.
+- **Translate PDF** (`/translate-pdf`): Translate extracted document text into Hindi, Spanish, French, German, and 10+ languages.
+- **PDF to Markdown** (`/pdf-to-markdown`): Convert headings, paragraphs, and tables into clean Markdown (.md).
+
+## Frequently Asked Questions (FAQ)
+
+### Are files uploaded to any server?
+No. All operations run 100% locally in your browser memory via WebAssembly and JavaScript. No document data is ever transmitted to an external server.
+
+### What is the maximum file size?
+Because processing is done on your local hardware, there are no artificial file size upload limits. Large documents are limited only by your computer's RAM.
+
+### Does it work offline?
+Yes. Once loaded in your browser, all core PDF utilities run completely offline without an active internet connection.
