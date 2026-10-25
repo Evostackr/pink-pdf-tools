@@ -5,6 +5,7 @@ import ToolGrid from './components/ToolGrid';
 import ToolPage from './components/ToolPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
+import SeoIntelligenceStudio from './components/SeoIntelligenceStudio';
 import HomeSupportingContent from './components/HomeSupportingContent';
 import Footer from './components/Footer';
 import { PDF_TOOLS } from './tools/registry';
@@ -24,10 +25,12 @@ export default function App() {
     isNotFound, 
     isPrivacy, 
     isTerms, 
+    isSeoStudio,
     toolId, 
     goToTool, 
     goToPrivacy, 
     goToTerms, 
+    goToSeoStudio,
     goHome 
   } = useAppRoute();
 
@@ -65,6 +68,7 @@ export default function App() {
         onSelectSampleTool={handleLaunchSample}
         onGoHome={goHome}
         onSelectTool={(t) => goToTool(t)}
+        onGoToSeoStudio={goToSeoStudio}
       />
 
       {/* Main Routed Content Area */}
@@ -80,6 +84,13 @@ export default function App() {
           <TermsOfUsePage 
             onBackToHome={goHome} 
             onGoToPrivacy={goToPrivacy} 
+          />
+        ) : isSeoStudio ? (
+          // Dedicated Full Page: SEO, AEO, GEO & AI Search Command Center
+          <SeoIntelligenceStudio
+            onBackToHome={goHome}
+            onSelectTool={(t) => goToTool(t)}
+            showToast={showToast}
           />
         ) : tool ? (
           // Dedicated Page for the Active Tool (including PDF Marker & Studio)
@@ -223,6 +234,7 @@ export default function App() {
         onGoHome={goHome}
         onGoToPrivacy={goToPrivacy}
         onGoToTerms={goToTerms}
+        onGoToSeoStudio={goToSeoStudio}
       />
     </div>
   );

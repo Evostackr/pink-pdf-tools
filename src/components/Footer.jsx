@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import { PDF_TOOLS, TOOL_CATEGORIES } from '../tools/registry';
 
-export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTerms }) {
+export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTerms, onGoToSeoStudio }) {
   const currentYear = new Date().getFullYear();
 
   // Organize tools for structured footer columns
@@ -170,6 +170,11 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
             <li>
               <a href="/terms" onClick={handleTermsClick}>
                 Terms of Use
+              </a>
+            </li>
+            <li>
+              <a href="/seo-studio" onClick={(e) => { e.preventDefault(); if (onGoToSeoStudio) onGoToSeoStudio(); }}>
+                SEO & AI Command Center
               </a>
             </li>
             <li>

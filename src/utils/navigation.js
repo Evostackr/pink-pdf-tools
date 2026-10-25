@@ -19,12 +19,15 @@ export function parseRoute() {
     return { isHome: true, toolId: null, tool: null, isPrivacy: false, isTerms: false };
   }
 
-  // Dedicated Static Policy Pages
+  // Dedicated Static Policy & Intelligence Pages
   if (raw === 'privacy' || raw === 'privacy-policy') {
-    return { isHome: false, isPrivacy: true, isTerms: false, toolId: null, tool: null };
+    return { isHome: false, isPrivacy: true, isTerms: false, isSeoStudio: false, toolId: null, tool: null };
   }
   if (raw === 'terms' || raw === 'terms-of-use' || raw === 'terms-of-service') {
-    return { isHome: false, isPrivacy: false, isTerms: true, toolId: null, tool: null };
+    return { isHome: false, isPrivacy: false, isTerms: true, isSeoStudio: false, toolId: null, tool: null };
+  }
+  if (raw === 'seo-studio' || raw === 'seo' || raw === 'seo-command-center' || raw === 'search-intelligence') {
+    return { isHome: false, isPrivacy: false, isTerms: false, isSeoStudio: true, toolId: null, tool: null };
   }
 
   // Find tool by ID
@@ -179,6 +182,58 @@ function updateRouteSEO(route) {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Terms of Use",
+                "item": pageUrl
+              }
+            ]
+          }
+        ]
+      });
+    }
+  } else if (route.isSeoStudio) {
+    const title = `SEO, AEO, GEO & AI Search Intelligence Studio — PINKPDF`;
+    const desc = `Real-time technical SEO diagnostics, topical authority clusters, entity knowledge graphs, AEO featured snippet simulations, and generative engine optimization command center for PINKPDF.`;
+    const pageUrl = `${BASE_CANONICAL}/seo-studio`;
+
+    document.title = title;
+    if (metaDesc) metaDesc.setAttribute('content', desc);
+    if (canonicalEl) canonicalEl.setAttribute('href', pageUrl);
+    if (ogTitle) ogTitle.setAttribute('content', title);
+    if (ogDesc) ogDesc.setAttribute('content', desc);
+    if (ogUrl) ogUrl.setAttribute('content', pageUrl);
+    if (twitterTitle) twitterTitle.setAttribute('content', title);
+    if (twitterDesc) twitterDesc.setAttribute('content', desc);
+
+    if (schemaScript) {
+      schemaScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": `${pageUrl}#webpage`,
+            "name": title,
+            "description": desc,
+            "url": pageUrl,
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": `${BASE_CANONICAL}/#website`,
+              "name": "PINKPDF Suite",
+              "url": BASE_CANONICAL + "/"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${pageUrl}#breadcrumbs`,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": BASE_CANONICAL + "/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "SEO & AI Search Studio",
                 "item": pageUrl
               }
             ]
@@ -427,6 +482,10 @@ export function useAppRoute() {
     navigateTo('/terms');
   };
 
+  const goToSeoStudio = () => {
+    navigateTo('/seo-studio');
+  };
+
   const goHome = () => {
     navigateTo('/');
   };
@@ -436,6 +495,7 @@ export function useAppRoute() {
     goToTool,
     goToPrivacy,
     goToTerms,
+    goToSeoStudio,
     goHome,
     navigate: navigateTo
   };

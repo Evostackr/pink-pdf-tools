@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   FileText, Search, Moon, Sun, Sparkles, ArrowRight, X, 
-  Menu, ChevronDown, ShieldCheck, Zap, HelpCircle, Layers, Smartphone
+  Menu, ChevronDown, ShieldCheck, Zap, HelpCircle, Layers, Smartphone, Activity
 } from 'lucide-react';
 import { PDF_TOOLS, TOOL_CATEGORIES } from '../tools/registry';
 import ToolIcon from './ToolIcon';
@@ -14,6 +14,7 @@ export default function Header({
   onSelectSampleTool,
   onGoHome,
   onSelectTool,
+  onGoToSeoStudio,
   isIosMode,
   onToggleIosMode
 }) {
@@ -219,6 +220,16 @@ export default function Header({
           >
             <Sparkles size={16} color="var(--pink-primary)" />
             <span>Try Sample</span>
+          </button>
+
+          <button 
+            className="btn-outline" 
+            onClick={onGoToSeoStudio}
+            title="SEO, AEO, GEO & AI Search Intelligence Studio"
+            style={{ fontSize: '0.8rem', padding: '0.45rem 0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+          >
+            <Activity size={15} color="var(--pink-primary)" />
+            <span>SEO Studio</span>
           </button>
 
           <button 
