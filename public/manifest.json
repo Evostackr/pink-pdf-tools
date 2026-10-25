@@ -1,0 +1,19 @@
+{
+  "name": "PINKPDF — 100% Private Client-Side PDF Tools",
+  "short_name": "PinkPDF",
+  "description": "Fast, free, and private client-side PDF utility suite. Merge, compress, convert, edit, and sign PDFs locally with WebAssembly.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090d",
+  "theme_color": "#ff2d75",
+  "orientation": "portrait-primary",
+  "categories": ["utilities", "productivity", "business"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

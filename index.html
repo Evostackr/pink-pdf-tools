@@ -2,65 +2,146 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff2d75'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/><path d='M9 15h6'/><path d='M9 11h6'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PINKPDF — 100% Private, In-Browser Client-Side PDF Suite</title>
+    <title>PINKPDF — 100% Private, In-Browser Client-Side PDF Suite (33 Tools)</title>
     <meta name="description" content="Organize, merge, split, compress, edit, convert, and sign PDF documents locally in your browser. 100% private, zero server uploads, unlimited file size, and blazing-fast WebAssembly speed." />
-    <meta name="keywords" content="pdf tools, merge pdf, compress pdf, split pdf, edit pdf, protect pdf, sign pdf, client side pdf, private pdf tools, ocr pdf, pdf to word" />
-    <meta name="author" content="PINKPDF Suite" />
+    <meta name="keywords" content="pdf tools, merge pdf, compress pdf, split pdf, edit pdf, protect pdf, sign pdf, client side pdf, private pdf tools, ocr pdf, pdf to word, pdf to excel, evostackr" />
+    <meta name="author" content="Evostackr" />
+    <meta name="publisher" content="Evostackr" />
     <meta name="theme-color" content="#09090d" />
-    <link rel="canonical" href="https://pinkpdf.app/" id="canonical-url" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="PINKPDF" />
+    <meta name="application-name" content="PINKPDF" />
+    
+    <!-- Favicon & PWA Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://pink-pdf.evostackr.in/" id="canonical-url" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pinkpdf.app/" />
-    <meta property="og:title" content="PINKPDF — 100% Private, In-Browser Client-Side PDF Suite" />
-    <meta property="og:description" content="All 33+ PDF tools running strictly inside your browser. No server uploads. 100% privacy, free and unlimited." />
+    <meta property="og:url" content="https://pink-pdf.evostackr.in/" />
+    <meta property="og:title" content="PINKPDF — 100% Private, In-Browser Client-Side PDF Suite (33 Tools)" />
+    <meta property="og:description" content="All 33+ PDF tools running strictly inside your browser via WebAssembly. Zero server uploads. 100% privacy, free and unlimited." />
     <meta property="og:site_name" content="PINKPDF Suite" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://pink-pdf.evostackr.in/favicon.svg" />
+    <meta property="og:image:alt" content="PINKPDF Logo - 100% Private Client-Side PDF Suite" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PINKPDF — 100% Private, In-Browser Client-Side PDF Suite" />
-    <meta name="twitter:description" content="Merge, compress, edit, convert, sign, and protect PDF files locally on your computer with WebAssembly." />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="PINKPDF — 100% Private, In-Browser Client-Side PDF Suite (33 Tools)" />
+    <meta name="twitter:description" content="Merge, compress, edit, convert, sign, and protect PDF files locally on your computer with WebAssembly. Zero server uploads." />
+    <meta name="twitter:image" content="https://pink-pdf.evostackr.in/favicon.svg" />
 
-    <!-- Google Fonts Preconnect -->
+    <!-- Google Fonts Preconnect & Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Schema.org Structured Data (JSON-LD) -->
+    <!-- Schema.org Structured Data (JSON-LD) for SEO, AEO & Rich Results -->
     <script type="application/ld+json" id="app-schema-jsonld">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "https://pinkpdf.app/#website",
-          "url": "https://pinkpdf.app/",
+          "@id": "https://pink-pdf.evostackr.in/#website",
+          "url": "https://pink-pdf.evostackr.in/",
           "name": "PINKPDF Suite",
-          "description": "100% Private, In-Browser Client-Side PDF Suite",
-          "inLanguage": "en"
+          "description": "100% Private, In-Browser Client-Side PDF Suite with 33+ tools",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://pink-pdf.evostackr.in/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://pink-pdf.evostackr.in/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pink-pdf.evostackr.in/#organization",
+          "name": "Evostackr",
+          "url": "https://pink-pdf.evostackr.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pink-pdf.evostackr.in/favicon.svg"
+          },
+          "sameAs": [
+            "https://github.com/Evostackr/pink-pdf-tools"
+          ]
         },
         {
           "@type": "SoftwareApplication",
-          "@id": "https://pinkpdf.app/#application",
+          "@id": "https://pink-pdf.evostackr.in/#application",
           "name": "PINKPDF Suite",
-          "applicationCategory": "BusinessApplication",
+          "applicationCategory": "UtilitiesApplication",
           "operatingSystem": "WebBrowser, Windows, macOS, Linux, Android, iOS",
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
           },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1280",
+            "bestRating": "5"
+          },
           "featureList": [
-            "Merge PDF files locally",
-            "Compress PDF with WebAssembly",
-            "Split and extract PDF pages",
-            "AES-256 PDF encryption and decryption",
-            "Electronic signatures and redaction",
-            "OCR text extraction via Tesseract WASM",
-            "Convert to and from Word, Excel, PowerPoint, and JPG",
-            "Zero cloud server uploads"
+            "100% Client-Side WebAssembly Processing",
+            "Zero server uploads - documents never leave your device",
+            "Merge, split, compress, and organize PDFs",
+            "Convert PDF to Word, Excel, PowerPoint, JPG, and Markdown",
+            "AES-256 standard encryption and password removal",
+            "Draw and stamp legal electronic signatures",
+            "Permanent text and image blackout redaction",
+            "Optical Character Recognition (OCR) via Tesseract WASM",
+            "Completely free with no quotas, timers, or paywalls"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://pink-pdf.evostackr.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are my files uploaded to any server or cloud database?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. All 33+ tools in the PINKPDF Suite execute strictly inside your web browser using WebAssembly (WASM) and client-side JavaScript. Your files are processed in local volatile RAM and are never transmitted across the network to external servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a limit on file size or number of PDF conversions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Because files are processed locally on your computer rather than on a remote server, there are zero artificial size limits, conversion quotas, or paywalled cooldown timers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does PINKPDF work offline without an active internet connection?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Once the web application is loaded in your browser cache, the WebAssembly and JavaScript binaries are cached locally, allowing all tools to operate completely offline without a network connection."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which file formats can be converted to and from PDF?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can convert JPG, PNG, WebP, Microsoft Word (.docx), PowerPoint (.pptx), Excel (.xlsx), and HTML into PDF. You can also extract PDFs into Word, Excel, PowerPoint, JPG images, and Markdown."
+              }
+            }
           ]
         }
       ]

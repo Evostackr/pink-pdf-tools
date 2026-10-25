@@ -97,11 +97,11 @@ export default function HomeSupportingContent({ onSelectSampleTool }) {
       </section>
 
       {/* 2. COMPARISON TABLE: PINKPDF VS TRADITIONAL CLOUD CONVERTERS */}
-      <section className="supporting-section comparison-section">
+      <section className="supporting-section comparison-section" id="comparison" aria-labelledby="heading-comparison">
         <div className="supporting-container">
           <div className="section-header-center">
             <span className="section-eyebrow">WHY CLIENT-SIDE MATTERS</span>
-            <h2 className="section-heading">PINKPDF vs Traditional Cloud PDF Websites</h2>
+            <h2 id="heading-comparison" className="section-heading">PINKPDF vs Traditional Cloud PDF Websites</h2>
             <p className="section-subheading">
               A transparent look at the security, speed, and privacy differences between in-browser execution and cloud-hosted tools.
             </p>

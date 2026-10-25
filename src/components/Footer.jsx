@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   FileText, ShieldCheck, Zap, Lock, Heart, ExternalLink, 
-  ChevronRight, Sparkles, CheckCircle2, HelpCircle 
+  ChevronRight, Sparkles, CheckCircle2, HelpCircle, Bot, Map
 } from 'lucide-react';
 import { PDF_TOOLS, TOOL_CATEGORIES } from '../tools/registry';
 
@@ -50,18 +50,18 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
   };
 
   return (
-    <footer className="enhanced-app-footer" role="contentinfo">
+    <footer className="enhanced-app-footer" role="contentinfo" aria-label="Site Footer">
       {/* Top Banner: Local Engine Guarantee */}
       <div className="footer-trust-banner">
         <div className="footer-container trust-banner-content">
           <div className="trust-pill">
-            <ShieldCheck size={18} color="var(--pink-primary)" />
+            <ShieldCheck size={18} color="var(--pink-primary)" aria-hidden="true" />
             <span>100% In-Browser WebAssembly Engine • Zero Cloud Server Uploads</span>
           </div>
           <div className="trust-badges">
-            <span className="badge-item"><Zap size={14} /> GPU Accelerated</span>
-            <span className="badge-item"><Lock size={14} /> Memory Isolated</span>
-            <span className="badge-item"><Sparkles size={14} /> Unlimited & Free</span>
+            <span className="badge-item"><Zap size={14} aria-hidden="true" /> GPU Accelerated</span>
+            <span className="badge-item"><Lock size={14} aria-hidden="true" /> Memory Isolated</span>
+            <span className="badge-item"><Sparkles size={14} aria-hidden="true" /> Unlimited & Free</span>
           </div>
         </div>
       </div>
@@ -70,8 +70,8 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
       <div className="footer-container footer-main-grid">
         {/* Col 1: Brand & Mission */}
         <div className="footer-col brand-col">
-          <div className="brand-logo" onClick={onGoHome} style={{ cursor: 'pointer', marginBottom: '1rem' }}>
-            <div className="logo-icon-wrap">
+          <div className="brand-logo" onClick={onGoHome} style={{ cursor: 'pointer', marginBottom: '1rem' }} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter') onGoHome(); }}>
+            <div className="logo-icon-wrap" aria-hidden="true">
               <FileText size={22} strokeWidth={2.5} />
             </div>
             <div className="brand-name">
@@ -80,11 +80,11 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
             <span className="brand-badge">PRO SUITE</span>
           </div>
           <p className="footer-bio">
-            The next-generation client-side PDF workspace. Edit, merge, compress, protect, 
+            The next-generation client-side PDF workspace created by <strong>Evostackr</strong>. Edit, merge, compress, protect, 
             and convert documents entirely inside your browser with maximum privacy and native CPU/GPU execution.
           </p>
           <div className="footer-engine-badge">
-            <span className="engine-dot"></span>
+            <span className="engine-dot" aria-hidden="true"></span>
             <span>Local Engine: <strong>Active & Private</strong></span>
           </div>
         </div>
@@ -110,9 +110,9 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
           </ul>
         </div>
 
-        {/* Col 3: Convert Formats */}
+        {/* Col 3: Convert Documents */}
         <div className="footer-col">
-          <h4 className="footer-heading">Convert Formats</h4>
+          <h4 className="footer-heading">Convert Documents</h4>
           <ul className="footer-links">
             {convertTools.map(tool => (
               <li key={tool.id}>
@@ -136,14 +136,14 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
               </li>
             ))}
             <li>
-              <a href="/pdf-marker-pro" onClick={(e) => handleToolLink(e, { id: 'pdf-marker-pro' })}>
+              <a href="/ios-editor" onClick={(e) => { e.preventDefault(); onSelectTool({ id: 'ios-editor', name: 'iOS Studio', categoryTitle: 'iOS PDF Editor Studio', desc: 'Apple PencilKit-style PDF editing studio' }); }}>
                 PDF Marker & Studio (iOS)
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Col 5: Resources & Transparency */}
+        {/* Col 5: Resources, AI & Trust */}
         <div className="footer-col">
           <h4 className="footer-heading">Resources & Trust</h4>
           <ul className="footer-links">
@@ -172,6 +172,21 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
                 Terms of Use
               </a>
             </li>
+            <li>
+              <a href="/llms.txt" target="_blank" rel="noopener noreferrer">
+                AI Knowledge (llms.txt)
+              </a>
+            </li>
+            <li>
+              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
+                Sitemap (XML)
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Evostackr/pink-pdf-tools" target="_blank" rel="noopener noreferrer">
+                GitHub Repository
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -180,7 +195,7 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
       <div className="footer-bottom-bar">
         <div className="footer-container bottom-bar-container">
           <div className="copyright-text">
-            <span>© {currentYear} PINKPDF Suite. Handcrafted with Hot Pink & WebAssembly. All rights reserved.</span>
+            <span>© {currentYear} PINKPDF Suite by Evostackr. Handcrafted with Hot Pink & WebAssembly. All rights reserved.</span>
           </div>
 
           <div className="footer-sub-links">

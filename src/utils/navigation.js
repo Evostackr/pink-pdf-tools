@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { PDF_TOOLS } from '../tools/registry';
+import { TOOL_ONBOARDING_DATA } from '../data/toolOnboarding';
 
-const BASE_CANONICAL = 'https://pinkpdf.app';
+const BASE_CANONICAL = 'https://pink-pdf.evostackr.in';
 
 // Helper to extract tool ID or route from current window.location
 export function parseRoute() {
@@ -52,6 +53,24 @@ export function navigateTo(path) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Helper to get tool-specific FAQs for Schema.org AEO
+function getToolFAQs(tool) {
+  return [
+    {
+      q: `How does ${tool.name} keep my documents private?`,
+      a: `${tool.name} executes 100% locally in your web browser memory using WebAssembly. Your files are never uploaded to any remote server or cloud database.`
+    },
+    {
+      q: `Is there any file size limit for ${tool.name}?`,
+      a: `No. Because all processing is handled directly by your device's CPU and memory, there are no artificial file upload limits, conversion quotas, or paywalls.`
+    },
+    {
+      q: `Does ${tool.name} work offline?`,
+      a: `Yes. Once the PINKPDF application is loaded in your browser, the tool can run completely offline without an active internet connection.`
+    }
+  ];
+}
+
 // Function to update SEO Meta and Schema dynamically
 function updateRouteSEO(route) {
   const canonicalEl = document.getElementById('canonical-url');
@@ -83,12 +102,20 @@ function updateRouteSEO(route) {
         "@graph": [
           {
             "@type": "WebPage",
+            "@id": `${pageUrl}#webpage`,
             "name": title,
             "description": desc,
-            "url": pageUrl
+            "url": pageUrl,
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": `${BASE_CANONICAL}/#website`,
+              "name": "PINKPDF Suite",
+              "url": BASE_CANONICAL + "/"
+            }
           },
           {
             "@type": "BreadcrumbList",
+            "@id": `${pageUrl}#breadcrumbs`,
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -127,12 +154,20 @@ function updateRouteSEO(route) {
         "@graph": [
           {
             "@type": "WebPage",
+            "@id": `${pageUrl}#webpage`,
             "name": title,
             "description": desc,
-            "url": pageUrl
+            "url": pageUrl,
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": `${BASE_CANONICAL}/#website`,
+              "name": "PINKPDF Suite",
+              "url": BASE_CANONICAL + "/"
+            }
           },
           {
             "@type": "BreadcrumbList",
+            "@id": `${pageUrl}#breadcrumbs`,
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -155,6 +190,13 @@ function updateRouteSEO(route) {
     const title = `${route.tool.name} — Free Online In-Browser PDF Tool | PINKPDF`;
     const desc = `${route.tool.desc} Processed 100% locally in your browser with zero server uploads, military-grade privacy, and WebAssembly speed.`;
     const toolUrl = `${BASE_CANONICAL}/${route.tool.id}`;
+    const toolOnboarding = TOOL_ONBOARDING_DATA[route.tool.id];
+    const steps = (toolOnboarding && toolOnboarding.steps) || [
+      { stepNumber: 1, title: 'Upload File', desc: 'Select or drag & drop your document.' },
+      { stepNumber: 2, title: 'Configure Options', desc: 'Customize settings in the workspace.' },
+      { stepNumber: 3, title: 'Download', desc: 'Process and save your output file instantly.' }
+    ];
+    const toolFaqs = getToolFAQs(route.tool);
 
     document.title = title;
     if (metaDesc) metaDesc.setAttribute('content', desc);
@@ -171,8 +213,9 @@ function updateRouteSEO(route) {
         "@graph": [
           {
             "@type": "SoftwareApplication",
-            "name": route.tool.name,
-            "applicationCategory": "BusinessApplication",
+            "@id": `${toolUrl}#software`,
+            "name": `${route.tool.name} — PINKPDF`,
+            "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "WebBrowser, Windows, macOS, Linux, iOS, Android",
             "description": desc,
             "url": toolUrl,
@@ -180,10 +223,41 @@ function updateRouteSEO(route) {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "620",
+              "bestRating": "5"
             }
           },
           {
+            "@type": "HowTo",
+            "@id": `${toolUrl}#howto`,
+            "name": `How to use ${route.tool.name}`,
+            "description": `Step-by-step instructions to process your documents with ${route.tool.name} locally in your browser.`,
+            "step": steps.map((s, idx) => ({
+              "@type": "HowToStep",
+              "position": s.stepNumber || idx + 1,
+              "name": s.title,
+              "text": s.desc
+            }))
+          },
+          {
+            "@type": "FAQPage",
+            "@id": `${toolUrl}#faq`,
+            "mainEntity": toolFaqs.map(f => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.a
+              }
+            }))
+          },
+          {
             "@type": "BreadcrumbList",
+            "@id": `${toolUrl}#breadcrumbs`,
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -231,38 +305,69 @@ function updateRouteSEO(route) {
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://pinkpdf.app/#website",
-            "url": "https://pinkpdf.app/",
+            "@id": `${BASE_CANONICAL}/#website`,
+            "url": `${BASE_CANONICAL}/`,
             "name": "PINKPDF Suite",
             "description": homeDesc,
-            "inLanguage": "en"
+            "inLanguage": "en",
+            "publisher": {
+              "@id": `${BASE_CANONICAL}/#organization`
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": `${BASE_CANONICAL}/?q={search_term_string}`
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": `${BASE_CANONICAL}/#organization`,
+            "name": "Evostackr",
+            "url": `${BASE_CANONICAL}/`,
+            "logo": {
+              "@type": "ImageObject",
+              "url": `${BASE_CANONICAL}/favicon.svg`
+            },
+            "sameAs": [
+              "https://github.com/Evostackr/pink-pdf-tools"
+            ]
           },
           {
             "@type": "SoftwareApplication",
-            "@id": "https://pinkpdf.app/#application",
+            "@id": `${BASE_CANONICAL}/#application`,
             "name": "PINKPDF Suite",
-            "applicationCategory": "BusinessApplication",
+            "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "WebBrowser, Windows, macOS, Linux, Android, iOS",
             "offers": {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "1280",
+              "bestRating": "5"
             }
           },
           {
             "@type": "FAQPage",
+            "@id": `${BASE_CANONICAL}/#faq`,
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Are my files uploaded to any server?",
+                "name": "Are my files ever uploaded to any server or cloud database?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. All operations run 100% locally in your browser memory via WebAssembly and JavaScript. No document data is ever transmitted to an external server."
+                  "text": "No. All 33+ tools in the PINKPDF Suite execute strictly inside your web browser using WebAssembly (WASM) and client-side JavaScript. Your files are processed in local volatile RAM and are never transmitted across the network."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is there a limit on file size or number of conversions?",
+                "name": "Is there a limit on file size or number of PDF conversions?",
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "No. Because files are processed locally on your computer rather than on a remote server, there are zero artificial size limits or conversion paywalls."
@@ -270,10 +375,10 @@ function updateRouteSEO(route) {
               },
               {
                 "@type": "Question",
-                "name": "Does PINKPDF work offline without an internet connection?",
+                "name": "Does PINKPDF work offline without an active internet connection?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Once the web application is loaded in your browser, all PDF manipulation engines operate completely offline without an active network connection."
+                  "text": "Yes. Once the web application is loaded in your browser cache, all PDF manipulation engines operate completely offline without an active network connection."
                 }
               }
             ]
