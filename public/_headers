@@ -49,3 +49,11 @@
   Cache-Control: public, max-age=0, must-revalidate
   Content-Type: application/javascript; charset=utf-8
   Service-Worker-Allowed: /
+
+/rss.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: application/rss+xml; charset=utf-8
+
+/feed.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: application/rss+xml; charset=utf-8

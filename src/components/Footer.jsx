@@ -188,6 +188,11 @@ export default function Footer({ onSelectTool, onGoHome, onGoToPrivacy, onGoToTe
               </a>
             </li>
             <li>
+              <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+                RSS Feed (XML)
+              </a>
+            </li>
+            <li>
               <a href="https://github.com/Evostackr/pink-pdf-tools" target="_blank" rel="noopener noreferrer">
                 GitHub Repository
               </a>

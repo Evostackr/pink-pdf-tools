@@ -30,6 +30,17 @@ export function parseRoute() {
     return { isHome: false, isPrivacy: false, isTerms: false, isSeoStudio: true, toolId: null, tool: null };
   }
 
+  // Static Feeds & Machine Documents (RSS, Atom, Sitemap, LLMs)
+  if (raw === 'rss.xml' || raw === 'feed.xml' || raw === 'rss' || raw === 'feed') {
+    const target = raw.endsWith('.xml') ? raw : 'rss.xml';
+    window.location.replace('/' + target);
+    return { isHome: false, toolId: null, tool: null };
+  }
+  if (raw === 'sitemap.xml' || raw === 'robots.txt' || raw === 'llms.txt' || raw === 'llms-full.txt') {
+    window.location.replace('/' + raw);
+    return { isHome: false, toolId: null, tool: null };
+  }
+
   // Find tool by ID
   const matchedTool = PDF_TOOLS.find(t => t.id === raw || t.id === raw.toLowerCase());
 

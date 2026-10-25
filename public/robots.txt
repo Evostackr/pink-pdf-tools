@@ -60,7 +60,8 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# Sitemaps and AI Documentation
+# Sitemaps, Feeds and AI Documentation
 Sitemap: https://pink-pdf.evostackr.in/sitemap.xml
+# RSS Feed: https://pink-pdf.evostackr.in/rss.xml
 # LLMs documentation for Generative Engines
 # Reference: https://pink-pdf.evostackr.in/llms.txt

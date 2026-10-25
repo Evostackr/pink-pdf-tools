@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PINKPDF — 100% Private Client-Side PDF Suite</title>
+    <link>https://pink-pdf.evostackr.in/</link>
+    <description>Latest releases, security updates, and feature additions for PINKPDF. 33+ professional PDF tools running strictly inside your browser with WebAssembly and zero server uploads.</description>
+    <language>en-us</language>
+    <managingEditor>support@evostackr.in (Evostackr Engineering)</managingEditor>
+    <webMaster>admin@evostackr.in (Evostackr Team)</webMaster>
+    <lastBuildDate>Sun, 25 Oct 2026 15:15:00 GMT</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <atom:link href="https://pink-pdf.evostackr.in/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://pink-pdf.evostackr.in/favicon.svg</url>
+      <title>PINKPDF Suite</title>
+      <link>https://pink-pdf.evostackr.in/</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+
+    <item>
+      <title>PINKPDF SEO &amp; AI Search Intelligence Studio Launched</title>
+      <link>https://pink-pdf.evostackr.in/seo-studio</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/seo-studio</guid>
+      <pubDate>Sun, 25 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Intelligence</category>
+      <description><![CDATA[Introducing the unified SEO, AEO, GEO, and SXO Command Center. Real-time audit diagnostics across 36 routes, topical authority clusters, Schema.org entity graphs, and conversion funnel telemetry.]]></description>
+    </item>
+
+    <item>
+      <title>Client-Side In-Browser PDF Suite with 33 Free Tools</title>
+      <link>https://pink-pdf.evostackr.in/</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/</guid>
+      <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform</category>
+      <description><![CDATA[All 33 PDF utilities executed locally via WebAssembly, PDF-Lib, and Web Workers. Unlimited document size, instant processing speed, and 100% zero-upload data privacy.]]></description>
+    </item>
+
+    <item>
+      <title>Merge PDF — Combine Multiple Documents Locally</title>
+      <link>https://pink-pdf.evostackr.in/merge-pdf</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/merge-pdf</guid>
+      <pubDate>Sun, 25 Oct 2026 11:30:00 GMT</pubDate>
+      <category>Organize PDF</category>
+      <description><![CDATA[Seamlessly combine multiple PDF documents into one organized file. Drag and drop reordering, page preview, and high-speed local processing.]]></description>
+    </item>
+
+    <item>
+      <title>Split PDF — Extract Pages into Separate Files</title>
+      <link>https://pink-pdf.evostackr.in/split-pdf</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/split-pdf</guid>
+      <pubDate>Sun, 25 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Organize PDF</category>
+      <description><![CDATA[Separate individual pages or custom page ranges into independent PDF documents directly in your browser.]]></description>
+    </item>
+
+    <item>
+      <title>Compress PDF — Reduce File Size without Quality Loss</title>
+      <link>https://pink-pdf.evostackr.in/compress-pdf</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/compress-pdf</guid>
+      <pubDate>Sun, 25 Oct 2026 10:30:00 GMT</pubDate>
+      <category>Optimize PDF</category>
+      <description><![CDATA[Optimize embedded images, remove redundant metadata, and compress PDF streams to dramatically reduce file size while preserving high visual fidelity.]]></description>
+    </item>
+
+    <item>
+      <title>PDF to Word (DOCX) — Accurate Local Document Conversion</title>
+      <link>https://pink-pdf.evostackr.in/pdf-to-word</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/pdf-to-word</guid>
+      <pubDate>Sun, 25 Oct 2026 10:00:00 GMT</pubDate>
+      <category>Convert from PDF</category>
+      <description><![CDATA[Extract text, headings, and formatting from PDF files directly into editable Microsoft Word DOCX format inside your browser.]]></description>
+    </item>
+
+    <item>
+      <title>Sign PDF — Digital Signatures and Initials</title>
+      <link>https://pink-pdf.evostackr.in/sign-pdf</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/sign-pdf</guid>
+      <pubDate>Sun, 25 Oct 2026 09:30:00 GMT</pubDate>
+      <category>PDF Security</category>
+      <description><![CDATA[Draw, type, or upload legal signatures and place them precisely onto contracts and invoices with visual canvas preview.]]></description>
+    </item>
+
+    <item>
+      <title>Protect PDF — In-Browser AES-256 Document Encryption</title>
+      <link>https://pink-pdf.evostackr.in/protect-pdf</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/protect-pdf</guid>
+      <pubDate>Sun, 25 Oct 2026 09:00:00 GMT</pubDate>
+      <category>PDF Security</category>
+      <description><![CDATA[Encrypt your confidential PDF files with strong AES-256 password protection to restrict viewing, editing, and copying.]]></description>
+    </item>
+
+    <item>
+      <title>OCR PDF — Optical Character Recognition for Scanned Files</title>
+      <link>https://pink-pdf.evostackr.in/ocr-pdf</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/ocr-pdf</guid>
+      <pubDate>Sun, 25 Oct 2026 08:30:00 GMT</pubDate>
+      <category>PDF Intelligence</category>
+      <description><![CDATA[Extract text from scanned PDFs and raster images using Tesseract.js client-side OCR engine without sending sensitive data to external cloud APIs.]]></description>
+    </item>
+
+    <item>
+      <title>Zero Data Privacy Policy — 100% Client-Side Commitment</title>
+      <link>https://pink-pdf.evostackr.in/privacy</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/privacy</guid>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Legal</category>
+      <description><![CDATA[Learn how PINKPDF enforces absolute privacy: zero file uploads, zero server persistence, and zero tracking of document contents.]]></description>
+    </item>
+
+    <item>
+      <title>Terms of Use &amp; MIT License Architecture</title>
+      <link>https://pink-pdf.evostackr.in/terms</link>
+      <guid isPermaLink="true">https://pink-pdf.evostackr.in/terms</guid>
+      <pubDate>Sun, 25 Oct 2026 07:30:00 GMT</pubDate>
+      <category>Legal</category>
+      <description><![CDATA[Clear terms of use, privacy assurances, and service details for PINKPDF utilities maintained by Evostackr.]]></description>
+    </item>
+  </channel>
+</rss>
