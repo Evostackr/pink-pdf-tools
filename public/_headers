@@ -11,9 +11,9 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Ensure fresh HTML is loaded on new deployments
+# Edge cache HTML with fast revalidation for high performance
 /index.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
 
 # Cache worker scripts
 /*.worker.min.mjs

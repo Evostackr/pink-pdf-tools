@@ -41,8 +41,19 @@ export function parseRoute() {
     return { isHome: false, toolId: null, tool: null };
   }
 
+  // Common aliases for tool URLs
+  const ALIAS_MAP = {
+    'page-numbers': 'add-page-numbers',
+    'watermark-pdf': 'add-watermark',
+    'watermark': 'add-watermark',
+    'markdown': 'pdf-to-markdown',
+    'summarizer': 'ai-summarizer',
+    'forms': 'pdf-forms',
+  };
+  const normalizedRaw = ALIAS_MAP[raw.toLowerCase()] || raw.toLowerCase();
+
   // Find tool by ID
-  const matchedTool = PDF_TOOLS.find(t => t.id === raw || t.id === raw.toLowerCase());
+  const matchedTool = PDF_TOOLS.find(t => t.id === raw || t.id === normalizedRaw);
 
   if (matchedTool) {
     return { isHome: false, toolId: matchedTool.id, tool: matchedTool, isPrivacy: false, isTerms: false };
